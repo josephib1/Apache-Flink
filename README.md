@@ -10,7 +10,7 @@
 com/_/flink .
 
 4-Create file “docker-compose.yml” and copy this code into it:
-```xml
+```html
 version: "2.1"
 services:
       jobmanager:
