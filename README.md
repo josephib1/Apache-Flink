@@ -5,32 +5,57 @@
 ### Flink:
 
 •	First step is to download and run docker on windows using this link: https://www.docker.com/products/docker-desktop/.
+
 •	Run “docker info” in a terminal to insure docker is installed correctly.
+
 •	Copy the command “docker pull flink” into the command prompt, open this link for more instructions: https://hub.docker.com/_/flink .
+
 •	Create file “docker-compose.yml” and copy this code into it:
+
 •	version: "2.1"
+
 •	services:
+
 •	  jobmanager:
+
 •	    image: ${FLINK_DOCKER_IMAGE_NAME:-flink}
+
 •	    expose:
+
 •	      - "6123"
+
 •	    ports:
+
 •	      - "8081:8081"
+
 •	    command : jobmanager
+
 •	    environment:
-•	    - JOB_MANAGER_RPC_ADDRESS=jobmanager
-•	
+
+•	    - JOB_MANAGER_RPC_ADDRESS=jobmanager	
+
 •	  taskmanager:
+
 •	    image: ${FLINK_DOCKER_IMAGE_NAME:-flink}
+
 •	    expose:
+
 •	      - "6121"
+
 •	      - "6122"
+
 •	    depends_on:
+
 •	      - jobmanager
+
 •	    command : taskmanager
+
 •	    links:
+
 •	      - "jobmanager:jobmanager"
+
 •	    environment:
+
 •	      - JOB_MANAGER_RPC_ADDRESS=jobmanager
 
 •	Navigate from the cmd to this file location and then type “docker-compose up” and that should run flink without errors.
