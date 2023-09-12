@@ -1,4 +1,4 @@
-```html
+```xml
 
 # Apache Flink project 
 
@@ -96,6 +96,8 @@ Through the effective combination of these Apache Flink features, the project el
 
 
 ## Some Screenshots of the running project:
+
+```
 
 ![11](https://github.com/josephib1/Apache-Flink/assets/105210115/b2420fb2-46ca-485a-b74e-304a03202abf)
 
