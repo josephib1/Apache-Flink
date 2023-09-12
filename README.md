@@ -50,6 +50,7 @@ mvn archetype:generate     -DarchetypeGroupId=org.apache.flink   -DarchetypeArti
 
 ### Java Setup:
 
+```xml
 You should have jdk 8 or 11 installed on your pc.
 Run the code In an Ide and add this dependency:
 <!--//add dependency to create json object-->
