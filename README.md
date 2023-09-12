@@ -3,52 +3,56 @@
 
 ## Installation and Setup:
 ### Flink:
-```xml
 
-•	First step is to download and run docker on windows using this link: https://www.docker.com/products/docker-desktop/.
-•	Run “docker info” in a terminal to insure docker is installed correctly.
-•	Copy the command “docker pull flink” into the command prompt, open this link for more instructions: https://hub.docker.com/_/flink .
-•	Create file “docker-compose.yml” and copy this code into it:
-•	version: "2.1"
-•	services:
-•	  jobmanager:
-•	    image: ${FLINK_DOCKER_IMAGE_NAME:-flink}
-•	    expose:
-•	      - "6123"
-•	    ports:
-•	      - "8081:8081"
-•	    command : jobmanager
-•	    environment:
-•	    - JOB_MANAGER_RPC_ADDRESS=jobmanager	
-•	  taskmanager:
-•	    image: ${FLINK_DOCKER_IMAGE_NAME:-flink}
-•	    expose:
-•	      - "6121"
-•	      - "6122"
-•	    depends_on:
-•	      - jobmanager
-•	    command : taskmanager
-•	    links:
-•	      - "jobmanager:jobmanager"
-•	    environment:
-•	      - JOB_MANAGER_RPC_ADDRESS=jobmanager
-•	Navigate from the cmd to this file location and then type “docker-compose up” and that should run flink without errors.
-•	Open http://localhost:8081 and your good to go.
+1-First step is to download and run docker on windows using this link: https://www.docker.com/products/docker-desktop/.
+2-Run “docker info” in a terminal to insure docker is installed correctly.
+3-Copy the command “docker pull flink” into the command prompt, open this link for more instructions: https://hub.docker.
+com/_/flink .
+
+4-Create file “docker-compose.yml” and copy this code into it:
+```xml
+version: "2.1"
+services:
+      jobmanager:
+         image: ${FLINK_DOCKER_IMAGE_NAME:-flink}
+         expose:
+            - "6123"
+         ports:
+            - "8081:8081"
+     	   command : jobmanager
+         environment:
+   	   - JOB_MANAGER_RPC_ADDRESS=jobmanager	
+	   taskmanager:
+	      image: ${FLINK_DOCKER_IMAGE_NAME:-flink}
+	      expose:
+	         - "6121"
+	         - "6122"
+	      depends_on:
+	         - jobmanager
+	      command : taskmanager
+	      links:
+	         - "jobmanager:jobmanager"
+	      environment:
+	         - JOB_MANAGER_RPC_ADDRESS=jobmanager
 ```
+
+Navigate from the cmd to this file location and then type “docker-compose up” and that should run flink without errors.
+Open http://localhost:8081 and your good to go.
+
 ## Project:
 
 ### Maven setup:
-```xml
+
 To become ready to run new code on flink you need first to download maven and set it up:
-•	Download maven  .zip file from this link: https://maven.apache.org/download.cgi
-•	Navigate to environment variables on your pc and Maven bin file to the file path, and then create new System variable called “MAVEN_HOME” and add to it the file path of the extracted maven file.
-•	To test it try mvn –version.
-•	Create a new folder for the project and navigate to it using the cmd.
-•	Copy this command and run it in your cmd:  
+1-Download maven  .zip file from this link: https://maven.apache.org/download.cgi
+2-Navigate to environment variables on your pc and Maven bin file to the file path, and then create new System variable called “MAVEN_HOME” and add to it the file path of the extracted maven file.
+3-To test it try mvn –version.
+4-Create a new folder for the project and navigate to it using the cmd.
+5-Copy this command and run it in your cmd:  
 mvn archetype:generate     -DarchetypeGroupId=org.apache.flink   -DarchetypeArtifactId=flink-quickstart-java -DarchetypeVersion=1.4.2
-•	It should ask you for some informations enter them, and the project will be created.
-•	Last Step: your good to go .
-```
+6-It should ask you for some informations enter them, and the project will be created.
+7-Last Step: your good to go .
+
 ### Java Setup:
 
 You should have jdk 8 or 11 installed on your pc.
@@ -60,9 +64,10 @@ Run the code In an Ide and add this dependency:
    <artifactId>json</artifactId>
    <version>20140107</version>
 </dependency>
+```
 And make sure ide java version is same as your running jdk :
 <java.version>11</java.version>
-```
+
 
 ## Project Description: 
 ### Apache Flink Weather Data Processing:
