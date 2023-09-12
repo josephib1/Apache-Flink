@@ -1,10 +1,9 @@
-```xml
-
 # Apache Flink project 
 
 
 ## Installation and Setup:
 ### Flink:
+```xml
 
 •	First step is to download and run docker on windows using this link: https://www.docker.com/products/docker-desktop/.
 •	Run “docker info” in a terminal to insure docker is installed correctly.
@@ -35,11 +34,11 @@
 •	      - JOB_MANAGER_RPC_ADDRESS=jobmanager
 •	Navigate from the cmd to this file location and then type “docker-compose up” and that should run flink without errors.
 •	Open http://localhost:8081 and your good to go.
-
+```
 ## Project:
 
 ### Maven setup:
-
+```xml
 To become ready to run new code on flink you need first to download maven and set it up:
 •	Download maven  .zip file from this link: https://maven.apache.org/download.cgi
 •	Navigate to environment variables on your pc and Maven bin file to the file path, and then create new System variable called “MAVEN_HOME” and add to it the file path of the extracted maven file.
@@ -49,11 +48,12 @@ To become ready to run new code on flink you need first to download maven and se
 mvn archetype:generate     -DarchetypeGroupId=org.apache.flink   -DarchetypeArtifactId=flink-quickstart-java -DarchetypeVersion=1.4.2
 •	It should ask you for some informations enter them, and the project will be created.
 •	Last Step: your good to go .
-
+```
 ### Java Setup:
 
 You should have jdk 8 or 11 installed on your pc.
 Run the code In an Ide and add this dependency:
+```xml
 <!--//add dependency to create json object-->
 <dependency>
    <groupId>org.json</groupId>
@@ -62,7 +62,7 @@ Run the code In an Ide and add this dependency:
 </dependency>
 And make sure ide java version is same as your running jdk :
 <java.version>11</java.version>
-
+```
 
 ## Project Description: 
 ### Apache Flink Weather Data Processing:
@@ -97,7 +97,7 @@ Through the effective combination of these Apache Flink features, the project el
 
 ## Some Screenshots of the running project:
 
-```
+
 
 ![11](https://github.com/josephib1/Apache-Flink/assets/105210115/b2420fb2-46ca-485a-b74e-304a03202abf)
 
