@@ -4,8 +4,8 @@
 ## Installation and Setup:
 ### Flink:
 
-1-First step is to download and run docker on windows using this link: https://www.docker.com/products/docker-desktop/.
-2-Run “docker info” in a terminal to insure docker is installed correctly.
+1-First step is to download and run docker on windows using this link: https://www.docker.com/products/docker-desktop/.\n
+2-Run “docker info” in a terminal to insure docker is installed correctly.\n
 3-Copy the command “docker pull flink” into the command prompt, open this link for more instructions: https://hub.docker.
 com/_/flink .
 
